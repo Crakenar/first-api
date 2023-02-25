@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Providers;
+
+use App\Models\Author;
+use App\Models\Book;
+use App\Models\User;
+use App\Observers\AuthorObserver;
+use App\Observers\BookObserver;
+use App\Observers\UserObserver;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
+
+class EventServiceProvider extends ServiceProvider
+{
+    /**
+     * The event to listener mappings for the application.
+     *
+     * @var array<class-string, array<int, class-string>>
+     */
+    protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+    ];
+
+    /**
+     * Register any events for your application.
+     */
+    public function boot(): void
+    {
+        //
+        User::observe(UserObserver::class);
+        Book::observe(BookObserver::class);
+        Author::observe(AuthorObserver::class);
+    }
+
+    /**
+     * Determine if events and listeners should be automatically discovered.
+     */
+    public function shouldDiscoverEvents(): bool
+    {
+        return false;
+    }
+}
