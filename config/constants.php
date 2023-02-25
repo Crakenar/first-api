@@ -1,11 +1,11 @@
 <?php
 return [
-    "generic" => [
+    "generic_error_codes" => [
         'not_allowed' => 'generic-0000',
         'parsing_error' => 'generic-0010',
         'validation_rules' => 'generic-0010'
     ],
-    "author" => [
+    "author_error_codes" => [
         'generic_error' => 'author-0000',
         'not_allowed' => [
             'get'       => 'author-not-allowed-0010',
@@ -19,7 +19,7 @@ return [
         'post'      => 'author-0030',
         'delete'    => 'author-0040',
     ],
-    "book" => [
+    "book_error_codes" => [
         'generic_error' => 'book-0000',
         'not_allowed' => [
             'get'       => 'book-not-allowed-0010',

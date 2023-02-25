@@ -30,7 +30,7 @@ class BookException extends AppException
     {
         return new static([
             'errors' => 'No book found with id '.$id,
-            'error_code' => config('constants.book.get')
+            'error_code' => config('constants.book_error_codes.get')
         ]);
     }
 }

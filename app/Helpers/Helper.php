@@ -58,23 +58,23 @@ if (!function_exists('anonymizeEmail')) {
                     $errors = "You are not allowed to get ".$model_name;
                     break;
                 case Helper::NOT_ALLOWED_UPDATE:
-                    $error_code = config('constants.'.$model_name.'.not_allowed.update');
+                    $error_code = config('constants.'.$model_name.'_error_codes.not_allowed.update');
                     $errors = "You are not allowed to update ".$model_name;
                     break;
                 case Helper::NOT_ALLOWED_POST:
-                    $error_code = config('constants.'.$model_name.'.not_allowed.post');
+                    $error_code = config('constants.'.$model_name.'_error_codes.not_allowed.post');
                     $errors = "You are not allowed to post ".$model_name;
                     break;
                 case Helper::NOT_ALLOWED_DELETE:
-                    $error_code = config('constants.'.$model_name.'.not_allowed.delete');
+                    $error_code = config('constants.'.$model_name.'_error_codes.not_allowed.delete');
                     $errors = "You are not allowed to delete ".$model_name;
                     break;
                 case Helper::NOT_ALLOWED_CREATE:
-                    $error_code = config('constants.'.$model_name.'.not_allowed.create');
+                    $error_code = config('constants.'.$model_name.'_error_codes.not_allowed.create');
                     $errors = "You are not allowed to create ".$model_name;
                     break;
                 default:
-                    $error_code = config('constants.generic.not_allowed');
+                    $error_code = config('constants.generic_error_codes.not_allowed');
                     $errors = "You are not allowed to do that on ".$model_name;
                     break;
             }

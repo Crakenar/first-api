@@ -27,7 +27,7 @@ class AuthorException extends AppException
     {
         return new static([
             'errors' => 'No Author found with id '.$id,
-            'error_code' => config('constants.author.get')
+            'error_code' => config('constants.book_error_codes.get')
         ]);
     }
 }
