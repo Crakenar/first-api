@@ -19,3 +19,5 @@ yarn-error.log
 /.idea
 /.vscode
 /postgresql
+/pg_catalog
+/information_schema
