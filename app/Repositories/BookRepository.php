@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Book;
+use Illuminate\Database\Eloquent\Collection;
 
 class BookRepository extends BaseRepository
 {
@@ -12,7 +13,7 @@ class BookRepository extends BaseRepository
         parent::__construct($model);
     }
 
-    public function getAllBooks(): Book
+    public function getAllBooks(): Collection
     {
         return parent::getAll();
     }
